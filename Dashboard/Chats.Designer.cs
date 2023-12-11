@@ -28,47 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            panel1 = new Panel();
-            panel1.SuspendLayout();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            contacts1 = new Chat_components.Contacts();
+            lblEmail = new Label();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // flowLayoutPanel1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(366, 55);
-            label1.Name = "label1";
-            label1.Size = new Size(121, 44);
-            label1.TabIndex = 0;
-            label1.Text = "Chats";
+            flowLayoutPanel1.BackColor = SystemColors.ActiveCaption;
+            flowLayoutPanel1.Controls.Add(contacts1);
+            flowLayoutPanel1.Dock = DockStyle.Right;
+            flowLayoutPanel1.Location = new Point(629, 0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(265, 759);
+            flowLayoutPanel1.TabIndex = 1;
             // 
-            // panel1
+            // contacts1
             // 
-            panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(894, 170);
-            panel1.TabIndex = 14;
+            contacts1.BackColor = SystemColors.ActiveCaption;
+            contacts1.Dock = DockStyle.Top;
+            contacts1.Icon = null;
+            contacts1.Location = new Point(3, 3);
+            contacts1.Name = "contacts1";
+            contacts1.Size = new Size(260, 93);
+            contacts1.TabIndex = 0;
+            contacts1.Title = null;
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(3, 3);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(58, 19);
+            lblEmail.TabIndex = 2;
+            lblEmail.Text = "label1";
             // 
             // Chats
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
+            Controls.Add(lblEmail);
+            Controls.Add(flowLayoutPanel1);
             Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(4);
             Name = "Chats";
             Size = new Size(894, 759);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Load += Chats_Load;
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
-        private Panel panel1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Chat_components.Contacts contacts1;
+        private Label lblEmail;
     }
 }

@@ -113,6 +113,7 @@ namespace Iris_V1._1
         {
             string emailname = label1.Text;
             Account account = new Account(emailname);
+            Chats chats = new Chats(emailname);
             addUserControl(account);
         }
 
@@ -124,7 +125,7 @@ namespace Iris_V1._1
 
         private void gbtnChats_Click(object sender, EventArgs e)
         {
-            Chats chats = new Chats();
+            Chats chats = new Chats(emailname);
             addUserControl(chats);
         }
 

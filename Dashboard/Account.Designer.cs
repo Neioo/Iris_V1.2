@@ -56,18 +56,18 @@
             label5 = new Label();
             gtbBirthdate = new Guna.UI2.WinForms.Guna2TextBox();
             label6 = new Label();
-            panel1 = new Panel();
             gbtnUpdateProfile = new Guna.UI2.WinForms.Guna2Button();
             errorProvider1 = new ErrorProvider(components);
             btnSaveChanges = new Guna.UI2.WinForms.Guna2Button();
             openFileDialog1 = new OpenFileDialog();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pbProfilePic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // pbProfilePic
             // 
-            pbProfilePic.BackColor = SystemColors.ActiveCaption;
+            pbProfilePic.BackColor = Color.FromArgb(94, 148, 255);
             pbProfilePic.Enabled = false;
             pbProfilePic.ImageRotate = 0F;
             pbProfilePic.Location = new Point(37, 33);
@@ -83,8 +83,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = SystemColors.ActiveCaption;
+            label1.BackColor = Color.FromArgb(94, 148, 255);
             label1.Font = new Font("Century Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(170, 61);
             label1.Name = "label1";
             label1.Size = new Size(396, 44);
@@ -252,14 +253,6 @@
             label6.TabIndex = 10;
             label6.Text = "Birthdate:";
             // 
-            // panel1
-            // 
-            panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(894, 170);
-            panel1.TabIndex = 12;
-            // 
             // gbtnUpdateProfile
             // 
             gbtnUpdateProfile.CustomizableEdges = customizableEdges12;
@@ -302,6 +295,14 @@
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(94, 148, 255);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(894, 170);
+            panel1.TabIndex = 12;
             // 
             // Account
             // 
@@ -346,10 +347,10 @@
         private Label label5;
         private Guna.UI2.WinForms.Guna2TextBox gtbBirthdate;
         private Label label6;
-        private Panel panel1;
         private Guna.UI2.WinForms.Guna2Button gbtnUpdateProfile;
         private ErrorProvider errorProvider1;
         private Guna.UI2.WinForms.Guna2Button btnSaveChanges;
         private OpenFileDialog openFileDialog1;
+        private Panel panel1;
     }
 }
