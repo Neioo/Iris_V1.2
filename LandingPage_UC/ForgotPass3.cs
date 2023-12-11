@@ -43,11 +43,22 @@ namespace Iris_V1._1.LandingPage_UC
 
                 conn.Close();
                 MessageBox.Show("Successfully Updated!");
+
+
+                Login loginUC = new Login();
+                Form1 form = this.FindForm() as Form1;
+
+                if (form != null)
+                {
+                    form.addUserControl(loginUC);
+                }
             }
             else
             {
                 MessageBox.Show("Password and Confirm Password does not match");
             }
+
+
         }
     
         

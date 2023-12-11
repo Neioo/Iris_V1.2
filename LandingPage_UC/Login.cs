@@ -71,7 +71,13 @@ namespace Iris_V1._1.LandingPage_UC
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            ForgotPass1 fp = new ForgotPass1();
+            Form1 form = this.FindForm() as Form1;
 
+            if (form != null)
+            {
+                form.addUserControl(fp);
+            }
         }
 
         private void addUserControl(UserControl userControl)
