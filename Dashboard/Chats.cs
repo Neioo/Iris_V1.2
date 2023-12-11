@@ -25,72 +25,6 @@ namespace Iris_V1._1.Dashboard
 
         string constring = "Data Source=sqldatabase-iris.database.windows.net;Initial Catalog=iris;Persist Security Info=True;User ID=iris;Password=LanceNeoJeremy1";
 
-        /*private void UserItem()
-        {
-            flowLayoutPanel1.Controls.Clear();
-            SqlDataAdapter adapter;
-            adapter = new SqlDataAdapter("select * from users", constring);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-
-            if (table != null && table.Rows.Count > 0)
-            {
-                Contacts[] userControls = new Contacts[table.Rows.Count];
-                int index = 0;
-
-                foreach (DataRow row in table.Rows)
-                {
-                    string userEmail = row["email"].ToString();
-
-                    // Skip the current user
-                    if (userEmail == lblEmail.Text)
-                        continue;
-
-                    userControls[index] = new Contacts();
-                    MemoryStream stream = new MemoryStream((byte[])row["image"]);
-                    userControls[index].Icon = new Bitmap(stream);
-                    userControls[index].Title = row["firstname"].ToString();
-                    flowLayoutPanel1.Controls.Add(userControls[index]);
-                    index++;
-                }
-            }
-        }*/
-
-        /*private void UserItem()
-        {
-            flowLayoutPanel1.Controls.Clear();
-            SqlDataAdapter adapter;
-            adapter = new SqlDataAdapter("select * from users", constring);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            if (table != null)
-            {
-                if (table.Rows.Count > 0)
-                {
-                    Contacts[] userControl = new Contacts[table.Rows.Count];
-                    for (int i = 0; i < 1; i++)
-                    {
-                        foreach (DataRow row in table.Rows)
-                        {
-                            userControl[i] = new Contacts();
-                            MemoryStream stream = new MemoryStream((byte[])row["image"]);
-                            userControl[i].Icon = new Bitmap(stream);
-                            userControl[i].Title = row["firstname"].ToString();
-                            if (userControl[i].Title == lblEmail.Text)
-                            {
-                                flowLayoutPanel1.Controls.Remove(userControl[i]);
-                            }
-                            else
-                            {
-                                flowLayoutPanel1.Controls.Add(userControl[i]);
-                            }
-                            userControl[i].Click += new System.EventHandler(this.contacts1_Load);
-                        }
-                    }
-                }
-            }
-        }*/
-
         private void UserItem()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -164,7 +98,7 @@ namespace Iris_V1._1.Dashboard
         }
 
 
-        private void MessageChat()
+        /*private void MessageChat()
         {
 
             SqlConnection con2 = new SqlConnection(constring);
@@ -217,7 +151,57 @@ namespace Iris_V1._1.Dashboard
                     }
                 }
             }
+        }*/
+
+        private void MessageChat()
+        {
+            SqlConnection con2 = new SqlConnection(constring);
+            con2.Open();
+            string fnameQuery = "select firstname from users WHERE email = '" + _emailname + "'";
+            SqlCommand cmd2 = new SqlCommand(fnameQuery, con2);
+            string fname = cmd2.ExecuteScalar() as string;
+            con2.Close();
+
+            SqlDataAdapter adapter;
+            adapter = new SqlDataAdapter("select * from Chat", constring);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            flowLayoutPanel2.Controls.Clear();  // Clear existing controls before adding new ones
+
+            if (table != null)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    if ((lblUserTwo.Text == row["usertwo"].ToString() && fname == row["userone"].ToString()) ||
+                        (lblUserTwo.Text == row["userone"].ToString() && fname == row["usertwo"].ToString()))
+                    {
+                        if (lblUserTwo.Text == row["usertwo"].ToString())
+                        {
+                            Chat chat = new Chat();
+                            chat.Dock = DockStyle.Top;
+                            chat.BringToFront();
+                            chat.Title = row["message"].ToString();
+
+                            flowLayoutPanel2.Controls.Add(chat);
+                            flowLayoutPanel2.ScrollControlIntoView(chat);
+                        }
+                        else
+                        {
+                            Reply reply = new Reply();
+                            reply.Dock = DockStyle.Top;
+                            reply.BringToFront();
+                            reply.Title = row["message"].ToString();
+                            reply.Icon = pbUserTwo.Image;
+
+                            flowLayoutPanel2.Controls.Add(reply);
+                            flowLayoutPanel2.ScrollControlIntoView(reply);
+                        }
+                    }
+                }
+            }
         }
+
 
         private void contacts1_Load(object sender, EventArgs e)
         {
@@ -249,6 +233,11 @@ namespace Iris_V1._1.Dashboard
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

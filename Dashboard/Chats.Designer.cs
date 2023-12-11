@@ -43,14 +43,12 @@
             btnSend = new Guna.UI2.WinForms.Guna2Button();
             pbUserTwo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             lblUserTwo = new Label();
-            pictureBox1 = new PictureBox();
             panel1 = new Panel();
             flowLayoutPanel2 = new FlowLayoutPanel();
             timer1 = new System.Windows.Forms.Timer(components);
             flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbUserTwo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,6 +61,7 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(265, 759);
             flowLayoutPanel1.TabIndex = 1;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // contacts1
             // 
@@ -162,21 +161,9 @@
             lblUserTwo.TabIndex = 1;
             lblUserTwo.Text = "label1";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(577, 8);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(36, 37);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
-            // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblUserTwo);
             panel1.Controls.Add(pbUserTwo);
             panel1.Location = new Point(0, 0);
@@ -187,6 +174,7 @@
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            flowLayoutPanel2.AutoScroll = true;
             flowLayoutPanel2.Location = new Point(0, 61);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(629, 598);
@@ -215,7 +203,6 @@
             flowLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbUserTwo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -231,7 +218,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tbChatbox;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbUserTwo;
         private Label lblUserTwo;
-        private PictureBox pictureBox1;
         private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Timer timer1;
