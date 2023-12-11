@@ -25,38 +25,6 @@ namespace Iris_V1._1.Dashboard
 
         private void UserItem()
         {
-            /*flowLayoutPanel1.Controls.Clear();
-            SqlDataAdapter adapter;
-            adapter = new SqlDataAdapter("select * from users", constring);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            if (table != null)
-            {
-                if (table.Rows.Count > 0)
-                {
-                    Contacts[] userControl = new Contacts[table.Rows.Count];
-                    for (int i = 0; i < 1; i++)
-                    {
-                        foreach (DataRow row in table.Rows)
-                        {
-                            userControl[i] = new Contacts();
-                            MemoryStream stream = new MemoryStream((byte[])row["image"]);
-                            userControl[i].Icon = new Bitmap(stream);
-                            userControl[i].Title = row["firstname"].ToString();
-                            if (userControl[i].Title == lblEmail.Text)
-                            {
-                                flowLayoutPanel1.Controls.Remove(userControl[i]);
-                            }
-                            else
-                            {
-                                flowLayoutPanel1.Controls.Add(userControl[i]);
-                            }
-
-                        }
-                    }
-                }
-            }*/
-
             flowLayoutPanel1.Controls.Clear();
             SqlDataAdapter adapter;
             adapter = new SqlDataAdapter("select * from users", constring);
