@@ -25,7 +25,7 @@ namespace Iris_V1._1.Dashboard
 
         string constring = "Data Source=sqldatabase-iris.database.windows.net;Initial Catalog=iris;Persist Security Info=True;User ID=iris;Password=LanceNeoJeremy1";
 
-        private void UserItem()
+        /*private void UserItem()
         {
             flowLayoutPanel1.Controls.Clear();
             SqlDataAdapter adapter;
@@ -54,6 +54,41 @@ namespace Iris_V1._1.Dashboard
                     index++;
                 }
             }
+        }*/
+
+        private void UserItem()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            SqlDataAdapter adapter;
+            adapter = new SqlDataAdapter("select * from users", constring);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table != null)
+            {
+                if (table.Rows.Count > 0)
+                {
+                    Contacts[] userControl = new Contacts[table.Rows.Count];
+                    for (int i = 0; i < 1; i++)
+                    {
+                        foreach (DataRow row in table.Rows)
+                        {
+                            userControl[i] = new Contacts();
+                            MemoryStream stream = new MemoryStream((byte[])row["image"]);
+                            userControl[i].Icon = new Bitmap(stream);
+                            userControl[i].Title = row["firstname"].ToString();
+                            if (userControl[i].Title == lblEmail.Text)
+                            {
+                                flowLayoutPanel1.Controls.Remove(userControl[i]);
+                            }
+                            else
+                            {
+                                flowLayoutPanel1.Controls.Add(userControl[i]);
+                            }
+                            userControl[i].Click += new System.EventHandler(this.contacts1_Load);
+                        }
+                    }
+                }
+            }
         }
 
         private void Chats_Load(object sender, EventArgs e)
@@ -72,20 +107,23 @@ namespace Iris_V1._1.Dashboard
             string fname = cmd2.ExecuteScalar() as string;
             con2.Close();
 
-            SqlConnection con = new SqlConnection(constring);
-            con.Open();
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                con.Open();
+                string q = "INSERT INTO Chat (userone, usertwo, message) VALUES (@userone, @usertwo, @message)";
+                SqlCommand cmd = new SqlCommand(q, con);
+                cmd.Parameters.AddWithValue("@userone", fname);
+                cmd.Parameters.AddWithValue("@usertwo", lblUserTwo.Text);
+                cmd.Parameters.AddWithValue("@message", tbChatbox.Text);
 
-            string q = "insert into Chat(userone, usertwo, message)values(userone=@userone, usertwo=@usertwo, message=@message)";
-            SqlCommand cmd = new SqlCommand(q, con);
-            cmd.Parameters.AddWithValue("@userone", fname);
-            cmd.Parameters.AddWithValue("@usertwo", lblUserTwo.Text);
-            cmd.Parameters.AddWithValue("@message", tbChatbox.Text);
-
-            con.Close();
+                cmd.ExecuteNonQuery(); // Execute the query here
+                con.Close();
+            }
 
             MessageChat();
             tbChatbox.Clear();
         }
+
 
         private void MessageChat()
         {

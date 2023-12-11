@@ -150,6 +150,7 @@
             pbUserTwo.ShadowDecoration.CustomizableEdges = customizableEdges5;
             pbUserTwo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             pbUserTwo.Size = new Size(42, 37);
+            pbUserTwo.SizeMode = PictureBoxSizeMode.StretchImage;
             pbUserTwo.TabIndex = 0;
             pbUserTwo.TabStop = false;
             // 
