@@ -56,7 +56,7 @@ namespace Iris_V1._1.Dashboard
             }
         }*/
 
-        private void UserItem()
+        /*private void UserItem()
         {
             flowLayoutPanel1.Controls.Clear();
             SqlDataAdapter adapter;
@@ -89,7 +89,40 @@ namespace Iris_V1._1.Dashboard
                     }
                 }
             }
+        }*/
+
+        private void UserItem()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            SqlDataAdapter adapter;
+            adapter = new SqlDataAdapter("select * from users", constring);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            if (table != null && table.Rows.Count > 0)
+            {
+                Contacts[] userControls = new Contacts[table.Rows.Count];
+                int index = 0;
+
+                foreach (DataRow row in table.Rows)
+                {
+                    string userEmail = row["email"].ToString();
+
+                    // Skip the current user
+                    if (userEmail == lblEmail.Text)
+                        continue;
+
+                    userControls[index] = new Contacts();
+                    MemoryStream stream = new MemoryStream((byte[])row["image"]);
+                    userControls[index].Icon = new Bitmap(stream);
+                    userControls[index].Title = row["firstname"].ToString();
+                    flowLayoutPanel1.Controls.Add(userControls[index]);
+                    userControls[index].Click += new System.EventHandler(this.contacts1_Load); // Move this line outside of the loop
+                    index++;
+                }
+            }
         }
+
 
         private void Chats_Load(object sender, EventArgs e)
         {
@@ -109,13 +142,13 @@ namespace Iris_V1._1.Dashboard
 
             using (SqlConnection con = new SqlConnection(constring))
             {
-                con.Open();
+                
                 string q = "INSERT INTO Chat (userone, usertwo, message) VALUES (@userone, @usertwo, @message)";
                 SqlCommand cmd = new SqlCommand(q, con);
                 cmd.Parameters.AddWithValue("@userone", fname);
                 cmd.Parameters.AddWithValue("@usertwo", lblUserTwo.Text);
                 cmd.Parameters.AddWithValue("@message", tbChatbox.Text);
-
+                con.Open();
                 cmd.ExecuteNonQuery(); // Execute the query here
                 con.Close();
             }

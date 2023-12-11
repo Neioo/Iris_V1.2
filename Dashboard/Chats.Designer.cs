@@ -45,14 +45,11 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             flowLayoutPanel2 = new FlowLayoutPanel();
-            chat1 = new Chat_components.Chat();
-            reply1 = new Chat_components.Reply();
             flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbUserTwo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -96,7 +93,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(629, 94);
             panel2.TabIndex = 5;
-            panel2.Visible = false;
             // 
             // tbChatbox
             // 
@@ -189,33 +185,10 @@
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            flowLayoutPanel2.Controls.Add(chat1);
-            flowLayoutPanel2.Controls.Add(reply1);
             flowLayoutPanel2.Location = new Point(0, 61);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(629, 598);
             flowLayoutPanel2.TabIndex = 6;
-            flowLayoutPanel2.Visible = false;
-            // 
-            // chat1
-            // 
-            chat1.BackColor = SystemColors.ActiveCaption;
-            chat1.Location = new Point(4, 4);
-            chat1.Margin = new Padding(4);
-            chat1.Name = "chat1";
-            chat1.Size = new Size(618, 51);
-            chat1.TabIndex = 0;
-            chat1.Title = null;
-            // 
-            // reply1
-            // 
-            reply1.BackColor = SystemColors.ActiveCaption;
-            reply1.Icon = null;
-            reply1.Location = new Point(3, 62);
-            reply1.Name = "reply1";
-            reply1.Size = new Size(618, 70);
-            reply1.TabIndex = 1;
-            reply1.Title = null;
             // 
             // Chats
             // 
@@ -238,7 +211,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            flowLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -255,7 +227,5 @@
         private PictureBox pictureBox1;
         private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel2;
-        private Chat_components.Chat chat1;
-        private Chat_components.Reply reply1;
     }
 }
