@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgotPass1));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             tbFpEmail = new Guna.UI2.WinForms.Guna2TextBox();
             label9 = new Label();
             label1 = new Label();
@@ -47,7 +47,7 @@
             // tbFpEmail
             // 
             tbFpEmail.BorderRadius = 10;
-            tbFpEmail.CustomizableEdges = customizableEdges9;
+            tbFpEmail.CustomizableEdges = customizableEdges1;
             tbFpEmail.DefaultText = "";
             tbFpEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbFpEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -62,7 +62,7 @@
             tbFpEmail.PasswordChar = '\0';
             tbFpEmail.PlaceholderText = "Email";
             tbFpEmail.SelectedText = "";
-            tbFpEmail.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            tbFpEmail.ShadowDecoration.CustomizableEdges = customizableEdges2;
             tbFpEmail.Size = new Size(293, 41);
             tbFpEmail.TabIndex = 1;
             // 
@@ -90,7 +90,7 @@
             // btnFpContinue1
             // 
             btnFpContinue1.BorderRadius = 20;
-            btnFpContinue1.CustomizableEdges = customizableEdges11;
+            btnFpContinue1.CustomizableEdges = customizableEdges3;
             btnFpContinue1.DisabledState.BorderColor = Color.DarkGray;
             btnFpContinue1.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFpContinue1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -100,10 +100,11 @@
             btnFpContinue1.ForeColor = Color.White;
             btnFpContinue1.Location = new Point(410, 300);
             btnFpContinue1.Name = "btnFpContinue1";
-            btnFpContinue1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnFpContinue1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnFpContinue1.Size = new Size(180, 45);
             btnFpContinue1.TabIndex = 19;
             btnFpContinue1.Text = "Continue";
+            btnFpContinue1.Click += btnFpContinue1_Click;
             // 
             // pictureBox1
             // 
@@ -120,7 +121,7 @@
             btnCancel.BorderColor = Color.FromArgb(0, 123, 255);
             btnCancel.BorderRadius = 20;
             btnCancel.BorderThickness = 1;
-            btnCancel.CustomizableEdges = customizableEdges13;
+            btnCancel.CustomizableEdges = customizableEdges5;
             btnCancel.DisabledState.BorderColor = Color.DarkGray;
             btnCancel.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -130,10 +131,11 @@
             btnCancel.ForeColor = Color.FromArgb(0, 123, 255);
             btnCancel.Location = new Point(410, 360);
             btnCancel.Name = "btnCancel";
-            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnCancel.Size = new Size(180, 45);
             btnCancel.TabIndex = 21;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // ForgotPass1
             // 

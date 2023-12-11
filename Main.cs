@@ -84,35 +84,7 @@ namespace Iris_V1._1
         }
 
         private bool check;
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (check)
-            {
-
-                panel1.Width += 10;
-                if (panel1.Size == panel1.MaximumSize)
-                {
-                    gbtnLogOut.Text = "Log out";
-                    pbBurger.Left = +200;
-                    timer1.Stop();
-                    check = false;
-                    pbBurger.Image = Resources.burgerbar;
-                }
-            }
-            else
-            {
-                gbtnLogOut.Text = "";
-                panel1.Width -= 10;
-                if (panel1.Size == panel1.MinimumSize)
-                {
-                    pbBurger.Left = 23;
-                    timer1.Stop();
-                    check = true;
-                    pbBurger.Image = Resources.burgerbar;
-                }
-
-            }
-        }
+        
 
         private void pbBurger_Click(object sender, EventArgs e)
         {

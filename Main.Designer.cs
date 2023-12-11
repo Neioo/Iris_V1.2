@@ -39,21 +39,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             panel1 = new Panel();
             btnGreet = new Guna.UI2.WinForms.Guna2Button();
-            pbBurger = new Guna.UI2.WinForms.Guna2PictureBox();
             gbtnLogOut = new Guna.UI2.WinForms.Guna2Button();
             gbtnAbout = new Guna.UI2.WinForms.Guna2Button();
-            gbtnSettings = new Guna.UI2.WinForms.Guna2Button();
             gbtnChats = new Guna.UI2.WinForms.Guna2Button();
-            gbtnHome = new Guna.UI2.WinForms.Guna2Button();
             label3 = new Label();
             pbProfilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             label1 = new Label();
@@ -61,7 +52,6 @@
             applicationPanel = new Panel();
             timer2 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbBurger).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbProfilePic).BeginInit();
             SuspendLayout();
             // 
@@ -69,12 +59,9 @@
             // 
             panel1.BackColor = Color.FromArgb(77, 168, 218);
             panel1.Controls.Add(btnGreet);
-            panel1.Controls.Add(pbBurger);
             panel1.Controls.Add(gbtnLogOut);
             panel1.Controls.Add(gbtnAbout);
-            panel1.Controls.Add(gbtnSettings);
             panel1.Controls.Add(gbtnChats);
-            panel1.Controls.Add(gbtnHome);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(pbProfilePic);
             panel1.Controls.Add(label1);
@@ -105,27 +92,11 @@
             btnGreet.Text = "Hello, ";
             btnGreet.Click += btnGreet_Click;
             // 
-            // pbBurger
-            // 
-            pbBurger.Cursor = Cursors.Hand;
-            pbBurger.CustomizableEdges = customizableEdges3;
-            pbBurger.FillColor = Color.Transparent;
-            pbBurger.Image = (Image)resources.GetObject("pbBurger.Image");
-            pbBurger.ImageRotate = 0F;
-            pbBurger.Location = new Point(15, 9);
-            pbBurger.Name = "pbBurger";
-            pbBurger.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            pbBurger.Size = new Size(36, 32);
-            pbBurger.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbBurger.TabIndex = 14;
-            pbBurger.TabStop = false;
-            pbBurger.Click += pbBurger_Click;
-            // 
             // gbtnLogOut
             // 
             gbtnLogOut.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             gbtnLogOut.BackColor = Color.Transparent;
-            gbtnLogOut.CustomizableEdges = customizableEdges5;
+            gbtnLogOut.CustomizableEdges = customizableEdges3;
             gbtnLogOut.DisabledState.BorderColor = Color.DarkGray;
             gbtnLogOut.DisabledState.CustomBorderColor = Color.DarkGray;
             gbtnLogOut.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -138,7 +109,7 @@
             gbtnLogOut.ImageSize = new Size(40, 40);
             gbtnLogOut.Location = new Point(0, 689);
             gbtnLogOut.Name = "gbtnLogOut";
-            gbtnLogOut.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            gbtnLogOut.ShadowDecoration.CustomizableEdges = customizableEdges4;
             gbtnLogOut.Size = new Size(265, 70);
             gbtnLogOut.TabIndex = 13;
             gbtnLogOut.Text = "Log out";
@@ -147,7 +118,7 @@
             // gbtnAbout
             // 
             gbtnAbout.BackColor = Color.Transparent;
-            gbtnAbout.CustomizableEdges = customizableEdges7;
+            gbtnAbout.CustomizableEdges = customizableEdges5;
             gbtnAbout.DisabledState.BorderColor = Color.DarkGray;
             gbtnAbout.DisabledState.CustomBorderColor = Color.DarkGray;
             gbtnAbout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -158,40 +129,18 @@
             gbtnAbout.Image = (Image)resources.GetObject("gbtnAbout.Image");
             gbtnAbout.ImageAlign = HorizontalAlignment.Left;
             gbtnAbout.ImageSize = new Size(40, 40);
-            gbtnAbout.Location = new Point(3, 429);
+            gbtnAbout.Location = new Point(3, 321);
             gbtnAbout.Name = "gbtnAbout";
-            gbtnAbout.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            gbtnAbout.ShadowDecoration.CustomizableEdges = customizableEdges6;
             gbtnAbout.Size = new Size(262, 94);
             gbtnAbout.TabIndex = 8;
             gbtnAbout.Text = "About";
             gbtnAbout.Click += gbtnAbout_Click;
             // 
-            // gbtnSettings
-            // 
-            gbtnSettings.BackColor = Color.Transparent;
-            gbtnSettings.CustomizableEdges = customizableEdges9;
-            gbtnSettings.DisabledState.BorderColor = Color.DarkGray;
-            gbtnSettings.DisabledState.CustomBorderColor = Color.DarkGray;
-            gbtnSettings.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            gbtnSettings.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            gbtnSettings.FillColor = Color.Transparent;
-            gbtnSettings.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            gbtnSettings.ForeColor = Color.White;
-            gbtnSettings.Image = (Image)resources.GetObject("gbtnSettings.Image");
-            gbtnSettings.ImageAlign = HorizontalAlignment.Left;
-            gbtnSettings.ImageSize = new Size(40, 40);
-            gbtnSettings.Location = new Point(3, 330);
-            gbtnSettings.Name = "gbtnSettings";
-            gbtnSettings.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            gbtnSettings.Size = new Size(262, 94);
-            gbtnSettings.TabIndex = 7;
-            gbtnSettings.Text = "Settings";
-            gbtnSettings.Click += gbtnSettings_Click;
-            // 
             // gbtnChats
             // 
             gbtnChats.BackColor = Color.Transparent;
-            gbtnChats.CustomizableEdges = customizableEdges11;
+            gbtnChats.CustomizableEdges = customizableEdges7;
             gbtnChats.DisabledState.BorderColor = Color.DarkGray;
             gbtnChats.DisabledState.CustomBorderColor = Color.DarkGray;
             gbtnChats.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -202,35 +151,13 @@
             gbtnChats.Image = (Image)resources.GetObject("gbtnChats.Image");
             gbtnChats.ImageAlign = HorizontalAlignment.Left;
             gbtnChats.ImageSize = new Size(40, 40);
-            gbtnChats.Location = new Point(3, 233);
+            gbtnChats.Location = new Point(3, 221);
             gbtnChats.Name = "gbtnChats";
-            gbtnChats.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            gbtnChats.ShadowDecoration.CustomizableEdges = customizableEdges8;
             gbtnChats.Size = new Size(262, 94);
             gbtnChats.TabIndex = 6;
             gbtnChats.Text = "Chats";
             gbtnChats.Click += gbtnChats_Click;
-            // 
-            // gbtnHome
-            // 
-            gbtnHome.BackColor = Color.Transparent;
-            gbtnHome.CustomizableEdges = customizableEdges13;
-            gbtnHome.DisabledState.BorderColor = Color.DarkGray;
-            gbtnHome.DisabledState.CustomBorderColor = Color.DarkGray;
-            gbtnHome.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            gbtnHome.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            gbtnHome.FillColor = Color.Transparent;
-            gbtnHome.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            gbtnHome.ForeColor = Color.White;
-            gbtnHome.Image = (Image)resources.GetObject("gbtnHome.Image");
-            gbtnHome.ImageAlign = HorizontalAlignment.Left;
-            gbtnHome.ImageSize = new Size(40, 40);
-            gbtnHome.Location = new Point(3, 137);
-            gbtnHome.Name = "gbtnHome";
-            gbtnHome.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            gbtnHome.Size = new Size(262, 94);
-            gbtnHome.TabIndex = 5;
-            gbtnHome.Text = "Home";
-            gbtnHome.Click += gbtnHome_Click;
             // 
             // label3
             // 
@@ -248,7 +175,7 @@
             pbProfilePic.ImageRotate = 0F;
             pbProfilePic.Location = new Point(12, 77);
             pbProfilePic.Name = "pbProfilePic";
-            pbProfilePic.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            pbProfilePic.ShadowDecoration.CustomizableEdges = customizableEdges9;
             pbProfilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             pbProfilePic.Size = new Size(45, 42);
             pbProfilePic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -270,7 +197,6 @@
             // 
             // timer1
             // 
-            timer1.Tick += timer1_Tick;
             // 
             // applicationPanel
             // 
@@ -296,7 +222,6 @@
             Load += Main_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbBurger).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbProfilePic).EndInit();
             ResumeLayout(false);
         }
@@ -309,11 +234,8 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbProfilePic;
         private Label label3;
         private Guna.UI2.WinForms.Guna2Button gbtnAbout;
-        private Guna.UI2.WinForms.Guna2Button gbtnSettings;
         private Guna.UI2.WinForms.Guna2Button gbtnChats;
-        private Guna.UI2.WinForms.Guna2Button gbtnHome;
         private Guna.UI2.WinForms.Guna2Button gbtnLogOut;
-        private Guna.UI2.WinForms.Guna2PictureBox pbBurger;
         private System.Windows.Forms.Timer timer1;
         private Panel applicationPanel;
         private Guna.UI2.WinForms.Guna2Button btnGreet;

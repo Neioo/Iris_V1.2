@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgotPass3));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnCancel = new Guna.UI2.WinForms.Guna2Button();
             pictureBox1 = new PictureBox();
             btnFpContinue1 = new Guna.UI2.WinForms.Guna2Button();
@@ -51,7 +51,7 @@
             btnCancel.BorderColor = Color.FromArgb(0, 123, 255);
             btnCancel.BorderRadius = 20;
             btnCancel.BorderThickness = 1;
-            btnCancel.CustomizableEdges = customizableEdges9;
+            btnCancel.CustomizableEdges = customizableEdges1;
             btnCancel.DisabledState.BorderColor = Color.DarkGray;
             btnCancel.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -61,10 +61,11 @@
             btnCancel.ForeColor = Color.FromArgb(0, 123, 255);
             btnCancel.Location = new Point(410, 382);
             btnCancel.Name = "btnCancel";
-            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnCancel.Size = new Size(180, 45);
             btnCancel.TabIndex = 27;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // pictureBox1
             // 
@@ -79,7 +80,7 @@
             // btnFpContinue1
             // 
             btnFpContinue1.BorderRadius = 20;
-            btnFpContinue1.CustomizableEdges = customizableEdges11;
+            btnFpContinue1.CustomizableEdges = customizableEdges3;
             btnFpContinue1.DisabledState.BorderColor = Color.DarkGray;
             btnFpContinue1.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFpContinue1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -89,10 +90,11 @@
             btnFpContinue1.ForeColor = Color.White;
             btnFpContinue1.Location = new Point(410, 322);
             btnFpContinue1.Name = "btnFpContinue1";
-            btnFpContinue1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnFpContinue1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnFpContinue1.Size = new Size(180, 45);
             btnFpContinue1.TabIndex = 25;
             btnFpContinue1.Text = "Continue";
+            btnFpContinue1.Click += btnFpContinue1_Click;
             // 
             // label9
             // 
@@ -108,7 +110,7 @@
             // tbFpConfPass
             // 
             tbFpConfPass.BorderRadius = 10;
-            tbFpConfPass.CustomizableEdges = customizableEdges13;
+            tbFpConfPass.CustomizableEdges = customizableEdges5;
             tbFpConfPass.DefaultText = "";
             tbFpConfPass.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbFpConfPass.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -123,14 +125,14 @@
             tbFpConfPass.PasswordChar = '\0';
             tbFpConfPass.PlaceholderText = "Confirm new password";
             tbFpConfPass.SelectedText = "";
-            tbFpConfPass.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            tbFpConfPass.ShadowDecoration.CustomizableEdges = customizableEdges6;
             tbFpConfPass.Size = new Size(293, 41);
             tbFpConfPass.TabIndex = 22;
             // 
             // tbNewPassword
             // 
             tbNewPassword.BorderRadius = 10;
-            tbNewPassword.CustomizableEdges = customizableEdges15;
+            tbNewPassword.CustomizableEdges = customizableEdges7;
             tbNewPassword.DefaultText = "";
             tbNewPassword.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbNewPassword.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -145,7 +147,7 @@
             tbNewPassword.PasswordChar = '\0';
             tbNewPassword.PlaceholderText = "Enter your new password";
             tbNewPassword.SelectedText = "";
-            tbNewPassword.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            tbNewPassword.ShadowDecoration.CustomizableEdges = customizableEdges8;
             tbNewPassword.Size = new Size(293, 41);
             tbNewPassword.TabIndex = 28;
             // 
