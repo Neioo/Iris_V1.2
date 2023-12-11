@@ -96,6 +96,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(629, 94);
             panel2.TabIndex = 5;
+            panel2.Visible = false;
             // 
             // tbChatbox
             // 
@@ -171,6 +172,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel1
             // 
@@ -192,6 +194,7 @@
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(629, 598);
             flowLayoutPanel2.TabIndex = 6;
+            flowLayoutPanel2.Visible = false;
             // 
             // chat1
             // 
@@ -209,7 +212,7 @@
             reply1.Icon = null;
             reply1.Location = new Point(3, 62);
             reply1.Name = "reply1";
-            reply1.Size = new Size(618, 53);
+            reply1.Size = new Size(618, 70);
             reply1.TabIndex = 1;
             reply1.Title = null;
             // 

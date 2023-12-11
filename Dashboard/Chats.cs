@@ -107,7 +107,7 @@ namespace Iris_V1._1.Dashboard
             {
                 Chat[] chats = new Chat[table.Rows.Count];
                 Reply[] replies = new Reply[table.Rows.Count];
-                for (int i = 0; i < i; i++)
+                for (int i = 0; i < 1; i++)
                 {
                     foreach (DataRow row in table.Rows)
                     {
@@ -140,11 +140,26 @@ namespace Iris_V1._1.Dashboard
 
         private void contacts1_Load(object sender, EventArgs e)
         {
+            if (panel1.Visible == false && panel2.Visible == false && flowLayoutPanel2.Visible == false)
+            {
+                panel1.Visible = true;
+                panel2.Visible = true;
+                flowLayoutPanel2.Visible = true;
+            }
             Contacts control = (Contacts)sender;
             lblUserTwo.Text = control.Title;
             pbUserTwo.Image = control.Icon;
             MessageChat();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (panel1.Visible == true && panel2.Visible == true && flowLayoutPanel2.Visible == true)
+            {
+                panel1.Visible = false;
+                panel2.Visible = false;
+                flowLayoutPanel2.Visible = false;
+            }
+        }
     }
 }
