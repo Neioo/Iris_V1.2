@@ -126,8 +126,14 @@ namespace Iris_V1._1.Dashboard
 
         private void Chats_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            timer.Interval = (10 * 1000);
+            timer.Tick += new EventHandler(timer1_Tick);
+            timer.Start();
+
             lblEmail.Text = _emailname;
             UserItem();
+            MessageChat();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -142,7 +148,7 @@ namespace Iris_V1._1.Dashboard
 
             using (SqlConnection con = new SqlConnection(constring))
             {
-                
+
                 string q = "INSERT INTO Chat (userone, usertwo, message) VALUES (@userone, @usertwo, @message)";
                 SqlCommand cmd = new SqlCommand(q, con);
                 cmd.Parameters.AddWithValue("@userone", fname);
@@ -176,6 +182,10 @@ namespace Iris_V1._1.Dashboard
 
             if (table != null)
             {
+                if (table.Rows.Count > 0)
+                {
+
+                }
                 Chat[] chats = new Chat[table.Rows.Count];
                 Reply[] replies = new Reply[table.Rows.Count];
                 for (int i = 0; i < 1; i++)
@@ -231,6 +241,16 @@ namespace Iris_V1._1.Dashboard
                 panel2.Visible = false;
                 flowLayoutPanel2.Visible = false;
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            MessageChat();
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

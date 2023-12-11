@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Iris_V1._1
 {
@@ -45,6 +46,7 @@ namespace Iris_V1._1
         //guna2CirclePictureBox1
         private void Main_Load(object sender, EventArgs e)
         {
+
             label1.Text = emailname;
             byte[] getimage = new byte[0];
             SqlConnection con = new SqlConnection(constring);
@@ -56,7 +58,7 @@ namespace Iris_V1._1
             con2.Open();
             string fnameQuery = "select firstname from users WHERE email = '" + label1.Text + "'";
             SqlCommand cmd2 = new SqlCommand(fnameQuery, con2);
-            string fname = cmd2.ExecuteScalar() as string;  
+            string fname = cmd2.ExecuteScalar() as string;
             btnGreet.Text = "Hello, " + fname;
             con2.Close();
 
@@ -166,6 +168,11 @@ namespace Iris_V1._1
             string emailname = label1.Text;
             Account account = new Account(emailname);
             addUserControl(account);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

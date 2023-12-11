@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -43,10 +45,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             panel1 = new Panel();
+            btnGreet = new Guna.UI2.WinForms.Guna2Button();
             pbBurger = new Guna.UI2.WinForms.Guna2PictureBox();
             gbtnLogOut = new Guna.UI2.WinForms.Guna2Button();
             gbtnAbout = new Guna.UI2.WinForms.Guna2Button();
@@ -58,7 +59,7 @@
             label1 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             applicationPanel = new Panel();
-            btnGreet = new Guna.UI2.WinForms.Guna2Button();
+            timer2 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbBurger).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbProfilePic).BeginInit();
@@ -84,6 +85,25 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(265, 759);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
+            // 
+            // btnGreet
+            // 
+            btnGreet.CustomizableEdges = customizableEdges1;
+            btnGreet.DisabledState.BorderColor = Color.DarkGray;
+            btnGreet.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGreet.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGreet.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGreet.FillColor = Color.Transparent;
+            btnGreet.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGreet.ForeColor = Color.White;
+            btnGreet.Location = new Point(79, 74);
+            btnGreet.Name = "btnGreet";
+            btnGreet.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnGreet.Size = new Size(180, 45);
+            btnGreet.TabIndex = 15;
+            btnGreet.Text = "Hello, ";
+            btnGreet.Click += btnGreet_Click;
             // 
             // pbBurger
             // 
@@ -260,24 +280,6 @@
             applicationPanel.Size = new Size(894, 759);
             applicationPanel.TabIndex = 1;
             // 
-            // btnGreet
-            // 
-            btnGreet.CustomizableEdges = customizableEdges1;
-            btnGreet.DisabledState.BorderColor = Color.DarkGray;
-            btnGreet.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnGreet.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnGreet.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnGreet.FillColor = Color.Transparent;
-            btnGreet.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnGreet.ForeColor = Color.White;
-            btnGreet.Location = new Point(79, 74);
-            btnGreet.Name = "btnGreet";
-            btnGreet.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnGreet.Size = new Size(180, 45);
-            btnGreet.TabIndex = 15;
-            btnGreet.Text = "Hello, ";
-            btnGreet.Click += btnGreet_Click;
-            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -315,5 +317,6 @@
         private System.Windows.Forms.Timer timer1;
         private Panel applicationPanel;
         private Guna.UI2.WinForms.Guna2Button btnGreet;
+        private System.Windows.Forms.Timer timer2;
     }
 }

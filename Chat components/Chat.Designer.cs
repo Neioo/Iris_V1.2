@@ -35,7 +35,7 @@
             // 
             lblChat.AutoSize = true;
             lblChat.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblChat.Location = new Point(109, 20);
+            lblChat.Location = new Point(24, 21);
             lblChat.Name = "lblChat";
             lblChat.Size = new Size(57, 21);
             lblChat.TabIndex = 0;
@@ -48,7 +48,7 @@
             BackColor = SystemColors.ActiveCaption;
             Controls.Add(lblChat);
             Name = "Chat";
-            Size = new Size(296, 65);
+            Size = new Size(587, 65);
             Load += Chat_Load;
             ResumeLayout(false);
             PerformLayout();

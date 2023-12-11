@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -45,6 +46,7 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             flowLayoutPanel2 = new FlowLayoutPanel();
+            timer1 = new System.Windows.Forms.Timer(components);
             flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbUserTwo).BeginInit();
@@ -189,6 +191,11 @@
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(629, 598);
             flowLayoutPanel2.TabIndex = 6;
+            flowLayoutPanel2.Paint += flowLayoutPanel2_Paint;
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
             // 
             // Chats
             // 
@@ -227,5 +234,6 @@
         private PictureBox pictureBox1;
         private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
