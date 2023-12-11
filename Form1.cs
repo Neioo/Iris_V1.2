@@ -21,7 +21,7 @@ namespace Iris_V1._1
             this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
         }
 
-        string constring = "Data Source=ROGSTRIX\\SQLEXPRESS;Initial Catalog=iris;Integrated Security=True";
+        string constring = "Data Source=sqldatabase-iris.database.windows.net;Initial Catalog=iris;Persist Security Info=True;User ID=iris;Password=LanceNeoJeremy1";
 
 
         public void addUserControl(UserControl userControl)

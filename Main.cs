@@ -20,7 +20,7 @@ namespace Iris_V1._1
         public string firstname { get; set; }
         public string lastname { get; set; }
 
-        string constring = "Data Source=DESKTOP-C7QE51M\\SQLEXPRESS;Initial Catalog=iris;Integrated Security=True";
+        string constring = "Data Source=sqldatabase-iris.database.windows.net;Initial Catalog=iris;Persist Security Info=True;User ID=iris;Password=LanceNeoJeremy1";
 
         public Main()
         {
