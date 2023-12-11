@@ -105,6 +105,7 @@
             tbPassword.Size = new Size(293, 41);
             tbPassword.TabIndex = 1;
             tbPassword.UseSystemPasswordChar = true;
+            tbPassword.KeyPress += login_enter;
             // 
             // label1
             // 

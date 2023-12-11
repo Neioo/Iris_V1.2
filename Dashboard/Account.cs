@@ -26,6 +26,11 @@ namespace Iris_V1._1.Dashboard
             _emailname = email;
         }
 
+        public string email
+        {
+            get { return gtbEmail.Text; }
+        }
+
         public void SetPassword(string password)
         {
             _password = password;

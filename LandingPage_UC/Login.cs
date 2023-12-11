@@ -17,37 +17,8 @@ namespace Iris_V1._1.LandingPage_UC
         private Panel loginCPanel;
 
         string constring = "Data Source=sqldatabase-iris.database.windows.net;Initial Catalog=iris;Persist Security Info=True;User ID=iris;Password=LanceNeoJeremy1";
-        public Login()
-        {
-            InitializeComponent();
 
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addUserControl(UserControl userControl)
-        {
-            userControl.Dock = DockStyle.Fill;
-            loginCPanel.Controls.Clear();
-            loginCPanel.Controls.Add(userControl);
-            userControl.BringToFront();
-        }
-
-        private void btnSignUp_Click(object sender, EventArgs e)
-        {
-            Register registerControl = new Register();
-            Form1 form = this.FindForm() as Form1;
-
-            if (form != null)
-            {
-                form.addUserControl(registerControl);
-            }
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void userLogIn()
         {
             if (string.IsNullOrEmpty(tbEmail.Text.Trim()))
             {
@@ -80,8 +51,7 @@ namespace Iris_V1._1.LandingPage_UC
                 Main main = new Main();
                 main.emailname = tbEmail.Text;
                 main.Show();
-                Form1 form = this.FindForm() as Form1;
-                if (form != null)
+                if (this.FindForm() is Form1 form)
                 {
                     form.Hide();
                 }
@@ -91,7 +61,51 @@ namespace Iris_V1._1.LandingPage_UC
                 MessageBox.Show("Please check your email and password.");
             }
             con.Close();
+        }
 
+        public Login()
+        {
+            InitializeComponent();
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            loginCPanel.Controls.Clear();
+            loginCPanel.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            Register registerControl = new Register();
+            Form1 form = this.FindForm() as Form1;
+
+            if (form != null)
+            {
+                form.addUserControl(registerControl);
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            userLogIn();
+
+        }
+
+        private void login_enter(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                userLogIn();
+                e.Handled = true; //this will disable a sound when pressing enter
+            }
         }
     }
 }

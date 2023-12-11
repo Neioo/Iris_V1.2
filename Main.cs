@@ -20,6 +20,13 @@ namespace Iris_V1._1
         public string firstname { get; set; }
         public string lastname { get; set; }
 
+        private string _fname;
+
+        public string Firstname
+        {
+            get { return _fname; }
+        }
+
         string constring = "Data Source=sqldatabase-iris.database.windows.net;Initial Catalog=iris;Persist Security Info=True;User ID=iris;Password=LanceNeoJeremy1";
 
         public Main()
@@ -73,6 +80,7 @@ namespace Iris_V1._1
             }
             con.Close();
         }
+
         private bool check;
         private void timer1_Tick(object sender, EventArgs e)
         {
